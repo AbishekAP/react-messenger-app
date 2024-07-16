@@ -1,4 +1,3 @@
-```markdown
 # React Messenger App
 
 This is a React-based messaging application that allows users to communicate in real-time within multiple chat groups. The app utilizes Firebase for authentication and real-time database functionality.
