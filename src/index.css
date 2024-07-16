@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-app-color: #00a2ff;
+    --white-app-color: #f5f5f5;
+    --black-app-color: #363636;
+    --grey-app-color: #686868;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    letter-spacing: 1px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black-app-color);
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 'header header header'
+        'aside main main'
+        'footer footer footer';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr 3fr 0.3fr;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid var(--white-app-color);
+}
+
+header .logo {
+    font-size: 1.2rem;
+    color:var(--primary-app-color);
+}
+header .profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+header .profile img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+header .profile h4{
+   color: var(--white-app-color);
+}
+
+aside {
+    grid-area: aside;
+    padding:1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+aside .aside-header{
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+aside .aside-header h2{
+    font-size: 1.5rem;
+    color: var(--white-app-color);
+    text-align: center;
+}
+aside .aside-header form{
+    width: 15rem;
+    background-color: var(--white-app-color);
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+aside .aside-header form svg{
+    font-size: 1.1rem;
+}
+aside .aside-header form svg path{
+    color: var(--grey-app-color);
+}
+aside .aside-header form input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+}
+aside ul {
+    width: 100%;
+    padding: 0.5rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0.5rem;
+}
+aside ul .select{
+   background-color: var(--primary-app-color);
+}
+aside ul li{
+    flex-shrink: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    padding:1.5rem 1rem;
+    background-color: var(--grey-app-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    color: var(--white-app-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-overflow: ellipsis;
+}
+aside ul li:hover,
+aside ul li:focus
+{
+    background-color: var(--primary-app-color);
+}
+main {
+    grid-area: main;
+    padding: 1rem 2rem;
+}
+main .empty-messages{
+    width:100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey-app-color);
+    border-radius: 1rem;
+}
+main .empty-messages h1{
+   font-size: 5rem;
+   color: var(--primary-app-color);
+}
+main .empty-messages p{
+    font-size: 2rem;
+    color: var(--white-app-color);
+}
+main .messages-container{
+    width:100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--grey-app-color);
+    border-radius: 1rem;
+}
+main .messages-container .messages-header{
+    flex-shrink: 0;
+    width:100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--black-app-color);
+    border-radius: 1rem;
+    box-shadow: 0px 5px 10px 10px rgba(0,0,0,0.1);
+}
+main .messages-container .messages-header h2{
+    color: var(--white-app-color);
+}
+main .messages-container .message-input-container{
+    flex-shrink: 0;
+    padding-top: 0.5rem;
+}
+main .messages-container .message-input-container form{
+    flex-shrink: 0;
+    width: 20rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--white-app-color);
+    border-radius: 2rem;
+}
+main .messages-container .message-input-container input{
+    width: 100%;
+   background-color: transparent;
+   outline: none;
+   border: none;
+   font-size: 1.1rem;
+}
+main .messages-container .message-input-container svg{
+   font-size: 1.1rem;
+}
+main .messages-container .message-input-container svg path{
+   color: var(--grey-app-color);
+   font-size: 1rem;
+}
+main .messages-container .messages{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+main .messages-container .messages .message{
+    max-width: 50%;
+    flex-shrink: 0;
+    display: flex;
+    gap: 0.5rem;
+}
+main .messages-container .messages .message img{
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.empty-img{
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--white-app-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--grey-app-color);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+main .messages-container .messages .message .message-content{
+    background-color: var(--primary-app-color);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+main .messages-container .messages .message .message-content h4{
+    color: var(--black-app-color);
+}
+main .messages-container .messages .message .message-content p{
+    color: var(--white-app-color);
+}
+footer {
+    grid-area: footer;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer p{
+    text-align: center;
+    color: var(--white-app-color);
+}
+.signin-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.signin-container h1{
+    font-size: 4rem;
+    color: var(--white-app-color);
+}
+.signin-container p{
+    font-size: 2rem;
+    color: var(--primary-app-color);
+}
+.signin-container button{
+    font-size: 1rem;
+    padding: 0.5rem 1rem ;
+    color: var(--primary-app-color);
+    background-color: var(--white-app-color);
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+@media (max-width:768px){
+    html{
+        font-size: 75%;
+    }
+    #root {
+        grid-template-areas: 'header header header'
+            'main main main'
+            'footer footer footer';
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 3fr 0.3fr;
+    }
+    aside{
+        position: absolute;
+        transform: translateX(300%);
+    }
+}
